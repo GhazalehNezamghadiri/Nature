@@ -1,0 +1,145 @@
+@import "tailwindcss";
+body{
+    font-family: "Archivo", sans-serif;
+}
+
+@theme{
+    --color-main : #2b707d;
+    --color-aftr: #0b2621;
+    --color-topic:#212934;
+    --color-gra:#2c717e;
+    --color-num:#e5e2dd;
+    
+    --color-line:#e2b374;
+    --color-foot:#0b2621;
+    --color-foot1:#1e584d;
+    --color-foot2:#f3cd89;
+    
+
+}
+
+.box{
+    @apply bg-cover bg-center bg-no-repeat;
+    background-image: url(../img/landscaper-home-hero-background-3.jpg);
+}
+.box1{
+    @apply bg-center bg-cover bg-no-repeat;
+    background-image: url(../img/landscaper-grass-background-4.jpg);
+}
+.box2{
+    @apply bg-center bg-cover bg-no-repeat;
+    background-image: url(../img/landscaper-home-service-background1.jpg);
+}
+.box3{
+    @apply bg-center bg-cover  bg-no-repeat;
+    background-image: url(../img/landscaper-cta-background.jpg);
+}
+@keyframes foot1{
+    0%{border-radius:37% 63% 41% 59% / 56% 34% 66% 44% ;}
+    50%{border-radius:64% 36% 63% 37% / 37% 59% 41% 63%  ;}
+    100%{border-radius:30% 70% 51% 49% / 62% 41% 59% 38%   ;}
+ }
+
+@keyframes foot2{
+    0%{border-radius:30% 70% 51% 49% / 62% 41% 59% 38%  ;}
+    50%{border-radius:37% 63% 41% 59% / 56% 34% 66% 44%  ;}
+    100%{border-radius:64% 36% 63% 37% / 37% 59% 41% 63%   ;}
+}
+
+.myfoot{
+    @apply w-[170px] h-[170px] fixed bottom-[15px] right-[15px];
+
+    &:hover{
+        >img,&::before{
+            animation-play-state: paused;
+        }
+        >figcaption{
+            bottom: -10px;
+            opacity: 1;
+        }
+        >a{
+            right: 100%;opacity: 1;
+        }
+    }
+
+    &::before{
+        content: '';
+        display: flex;
+        position: absolute;
+        width: 140px;
+        height: 140px;
+        top: 10px;
+        left: 35px;
+        background-color:#2b6f7dba;
+        animation: foot1 linear infinite alternate 6s;
+        z-index: -10;
+
+    }
+
+    >img{
+        width: 125px;
+        height: 125px;
+        object-fit: cover;
+        animation: foot2 linear infinite alternate 6s;
+        position: absolute;
+        top: 18px;
+        right: 1px;
+    }
+
+    >a{
+        
+        position: absolute;
+        right:100px ;
+        z-index: -9;
+        right: 50%;
+        font-size: 30px;
+        color: rgb(79, 56, 27);
+        transition: .4s;
+        opacity: 0;
+        color: #2b707d;
+
+        &:nth-of-type(1){
+            top: 0;
+            font-size: 28px;
+        }
+        &:nth-of-type(2){
+            top: 28%;
+            font-size: 28px;
+            transition-delay: .1s;
+        }
+        &:nth-of-type(3){
+            top: 56%;
+            font-size: 31px;
+            transition-delay: .2s;
+        }
+        &:nth-of-type(4){
+            top: 84%;
+            font-size: 22px;
+            transition-delay: .3s;
+            
+        }
+       
+    
+        
+    }
+
+    >figcaption{
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        color:#2b707d;
+        text-transform: capitalize;
+        bottom: 20px;
+        right:-20px;
+        z-index: -20;
+        transition: .4s;
+        font-weight: bold;
+        transition-delay: .2s;
+        opacity: 0;
+    }
+}
+
+
+
+
+
